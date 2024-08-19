@@ -57,4 +57,18 @@ class UserTest extends TestCase
 
         $response->assertRedirect('/dashboard');
     }
+
+    public function test_check_if_a_given_user_exist_in_database()
+    {
+        $this->assertDatabaseHas('users',[
+            'email'=>"ebanga@lobonga.org"
+        ]);
+    }
+
+    public function test_check_if_an_email_is_missing()
+    {
+        $this->assertDatabaseMissing('users',[
+            'email'=>"mbula@lobonga.org"
+        ]);
+    }
 }
