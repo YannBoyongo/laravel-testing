@@ -71,4 +71,9 @@ class UserTest extends TestCase
             'email'=>"mbula@lobonga.org"
         ]);
     }
+
+    public function test_check_if_seeder_works()
+    {
+        $this->seed();
+    }
 }
